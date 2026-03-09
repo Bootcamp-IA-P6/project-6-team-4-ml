@@ -1,0 +1,9 @@
+services:
+  cardio-app:
+    build: .             # Busca el Dockerfile en la carpeta actual
+    container_name: mi-cardio-container
+    ports:
+      - "8501:8501"      # Mapeo de puertos (Host:Contenedor)
+    volumes:
+      - ./docs:/app/docs # Mapeo del volumen para el historial CSV
+    restart: always      # Si el PC se reinicia, la app arranca sola
